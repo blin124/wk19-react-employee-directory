@@ -1,5 +1,6 @@
 {
   "name": "employeedir",
+  "language": "UTF-8",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
