@@ -9,7 +9,7 @@ class Navbar extends Component {
         return(
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light ">
-                    <a className="navbar-brand text-white" href="/">
+                    <a className="navbar-brand text-white" href="/wk19-react-employee-directory/">
                         DIR
                     </a>
                     <button
