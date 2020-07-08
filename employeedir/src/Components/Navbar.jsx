@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 import SearchBar from "./SearchBar";
 
 class Navbar extends Component {
@@ -23,13 +24,7 @@ class Navbar extends Component {
                         <span className="navbar-toggler-icon" />
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <a className="nav-link" href="/">
-                                Link
-                                </a>
-                            </li>
-                        </ul>
+                        <ul className="navbar-nav mr-auto"></ul>
                         <SearchBar handleSearch={this.props.handleSearch}/>
                     </div>
                 </nav>

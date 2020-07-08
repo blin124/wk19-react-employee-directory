@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 
 import Navbar from './Components/Navbar';
 import Jumbotron from './Components/Jumbotron';
-import {sortNameAscend, sortNameDescend} from "./Components/sortEmployeesUtil";
+import Footer from "./Components/Footer";
 
 import axios from "axios";
-
 
 class App extends Component{
 
@@ -13,28 +12,32 @@ class App extends Component{
         employees: []
     }
 
-    handleSearchEmployees = () => {
-        // axios call
-        axios.get("https://randomuser.me/api?results=100")
-        .then((response) => {
-            console.log({response});
-            this.setState({
-                employees: response.data.results[100]
-            })
-        })
+    componentDidMount() {
+        this.getEmployees();
     }
 
-    componentDidMount() {
-        this.handleSearchEmployees();
+    getEmployees = () => {
+        const url = "https://randomuser.me/api/?results=20";
+        axios.get(url)
+        .then((res) => {
+            console.log(res);
+            this.setState({
+                employees: res.data.results, 
+            });
+        })
+        .catch((err)=>{
+            console.log("Error in getting employee data from API", err);
+        });
     }
 
     render() {
         return (
             <div>
-                <Navbar handleSearch={this.handleSearchEmployees}/>
+                <Navbar handleSearch={this.handleSearch}/>
                 <Jumbotron 
                     employees={this.state.employees}
                 />
+                <Footer />
             </div>
         );
     }
